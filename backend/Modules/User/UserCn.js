@@ -26,13 +26,18 @@ export const getOne = catchAsync(async (req, res, next) => {
     .limitFields()
     .paginate()
     .populate();
+    if(req.userId != req.params.id){
+         return next(
+      new HandleERROR("you don't have permission for update this User", 400),
+    );
+    }
   const result = await feature.execute();
   return res.status(200).json(result);
 });
 // update user
 export const update = catchAsync(async (req, res, next) => {
   const user = await User.findById(req.params.id);
-  const { fullName = null, email = null, role = null, isActive } = req.body;
+  const { fullName = null, email = null, role = null, isActive="null" } = req.body;
   if (req.role == "user" && req.userId != req.params.id) {
     return next(
       new HandleERROR("you don't have permission for update this User", 400),
@@ -49,7 +54,7 @@ export const update = catchAsync(async (req, res, next) => {
   }
   if (req.role == "admin") {
     user.role = role || user.role;
-    user.isActive = isActive || user.isActive;
+    user.isActive = user.isActive=="null" ? user.isActive :isActive;
   }
   user.email = email || user.email;
   user.fullName = fullName || user.fullName;
