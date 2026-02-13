@@ -17,9 +17,12 @@ export const register = catchAsync(async (req, res, next) => {
 export const login = catchAsync(async (req, res, next) => {
   const { email, password } = req.body;
   const user = await User.findOne({ email });
+  if (!user) {
+    return next(new HandleERROR("user not founded", 404));
+  }
   const isMatch = bcryptjs.compareSync(password, user.password);
   if (!isMatch) {
-    return next(new HandleERROR("Email or Password is incorrect"));
+    return next(new HandleERROR("Email or Password is incorrect", 400));
   }
   const token = jwt.sign(
     { _id: user._id, role: user.role },
