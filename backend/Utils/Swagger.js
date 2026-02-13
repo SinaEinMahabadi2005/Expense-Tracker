@@ -4,9 +4,9 @@ const options = {
   definition: {
     openapi: "3.0.0",
     info: {
-      title: "حرکات ورزشی",
+      title: "Expense Tracker",
       version: "1.0.0",
-      description: " یک سیستم برای مدیریت حرکات ورزشی است.",
+      description: "Expense Tracker Application",
     },
     servers: [
       {
