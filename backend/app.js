@@ -9,6 +9,7 @@ import { exportValidationData } from "./Middlewares/ExportValidation.js";
 import rateLimit from "express-rate-limit";
 import swaggerUi from "swagger-ui-express";
 import { swaggerSpace } from "./Utils/Swagger.js";
+import authRouter from "./Modules/Auth/Auth.js";
 
 
 const limiter = rateLimit({
@@ -28,7 +29,7 @@ app.use(limiter);
 // app.use("/upload", express.static(`${__dirname}/Public`));
 app.use(exportValidationData);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpace));
-
+app.use("/auth",authRouter)
 
 app.use((req, res, next) => {
   return res.status(404).json({
