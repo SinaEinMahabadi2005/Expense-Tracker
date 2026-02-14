@@ -27,6 +27,10 @@ const transactionSchema = new mongoose.Schema(
       enum: ["income", "expense"],
       required: [true, "type is required "],
     },
+     isPublished: {
+      type: Boolean,
+      default: true,
+    },
   },
   { timestamps: true },
 );
