@@ -110,7 +110,7 @@
 
 /**
  * @swagger
- * /auth/register:
+ * /api/auth/register:
  *   post:
  *     summary: Register new user
  *     description: Create a new user account
@@ -138,7 +138,7 @@
 
 /**
  * @swagger
- * /auth/login:
+ * /api/auth/login:
  *   post:
  *     summary: Login user
  *     description: Authenticate user and return JWT token

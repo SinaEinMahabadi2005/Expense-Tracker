@@ -65,7 +65,7 @@
 
 /**
  * @swagger
- * /users:
+ * /api/users:
  *   get:
  *     summary: Get all users (Admin only)
  *     tags: [Users]
@@ -82,7 +82,7 @@
 
 /**
  * @swagger
- * /users/{id}:
+ * /api/users/{id}:
  *   get:
  *     summary: Get one user
  *     description: Admin can get any user, normal user can get only their own profile
@@ -138,7 +138,7 @@
 
 /**
  * @swagger
- * /users/{id}/change-password:
+ * /api/users/{id}/change-password:
  *   post:
  *     summary: Change password
  *     description: Logged-in user can change their password
