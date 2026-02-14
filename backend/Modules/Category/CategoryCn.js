@@ -1,6 +1,6 @@
 import ApiFeatures, { catchAsync, HandleERROR } from "vanta-api";
 import Category from "./CategoryMd.js";
-import Product from "../Product/ProductMd.js";
+
 import { __dirname } from "../../app.js";
 import fs from "fs";
 import Transaction from "../Transaction/TransactionMd.js";
