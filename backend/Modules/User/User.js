@@ -7,6 +7,7 @@ import {
   updateValidator,
   changePasswordValidator,
 } from "./UserValidator.js";
+import { handleValidationErrors } from "../../Utils/handleValidationError.js";
 
 const userRouter = Router();
 
@@ -14,11 +15,11 @@ userRouter.route("/").get(isAdmin, getall);
 
 userRouter
   .route("/:id")
-  .get(isLogin, getOneValidator, getOne)
-  .patch(isLogin, updateValidator, update);
+  .get(isLogin, getOneValidator,handleValidationErrors, getOne)
+  .patch(isLogin, updateValidator,handleValidationErrors, update);
 
 userRouter
   .route("/:id/change-password")
-  .post(isLogin, changePasswordValidator, changePassword);
+  .post(isLogin, changePasswordValidator,handleValidationErrors, changePassword);
 
 export default userRouter;
