@@ -2,7 +2,7 @@
 // import { useSelector } from "react-redux";
 // import { useNavigate } from "react-router-dom";
 
-// export default function WorkoutsList() {
+// export default function Categories() {
 //   const [categories, setCategories] = useState([]);
 //   const navigate = useNavigate();
 //   const id = localStorage.getItem("user")
@@ -67,7 +67,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-export default function WorkoutsList() {
+export default function Categories() {
   const [categories, setCategories] = useState([]);
   const navigate = useNavigate();
   const id = localStorage.getItem("user")
@@ -132,7 +132,7 @@ export default function WorkoutsList() {
         <h2 className="text-xl font-bold text-white">{category.name}</h2>
         <div
           className="w-4 h-4 rounded-full"
-          style={{ backgroundColor: category.color }}
+          style={{ backgroundColor: category.color.toLowerCase() }}
         ></div>
       </div>
       <div className="space-y-2">

@@ -35,9 +35,9 @@ export const createValidator = [
     .isString().withMessage("Icon must be string"),
 
   body("color")
-    .optional()
-    .matches(/^#([0-9A-Fa-f]{3}){1,2}$/)
-    .withMessage("Color must be valid HEX"),
+    .optional() ,
+    // .matches(/^#([0-9A-Fa-f]{3}){1,2}$/)
+    // .withMessage("Color must be valid HEX"),
 
   body("isPublished")
     .optional()
@@ -67,9 +67,9 @@ export const updateValidator = [
     .isString().withMessage("Icon must be string"),
 
   body("color")
-    .optional()
-    .matches(/^#([0-9A-Fa-f]{3}){1,2}$/)
-    .withMessage("Color must be valid HEX"),
+    .optional() ,
+    // .matches(/^#([0-9A-Fa-f]{3}){1,2}$/)
+    // .withMessage("Color must be valid HEX"),
 
   body("isPublished")
     .optional()
