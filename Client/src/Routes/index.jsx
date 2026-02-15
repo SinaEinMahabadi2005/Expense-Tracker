@@ -5,13 +5,10 @@ import PublicLayout from "../Layout/Public";
 import Auth from "../Pages/Auth";
 import PrivateLayout from "../Layout/Private";
 import Profile from "../Pages/Profile";
-import WorkoutsList from "../Pages/WorkoutsList";
-import Exercises from "../Pages/Exercises";
-import ExerciseDetails from "../Pages/ExerciseDetails";
+import Categories from "../Pages/Categories";
+import Transactions from "../Pages/Transactions";
 import Reports from "../Pages/Reports";
-import CreateWorkout from "../Pages/CreateWorkout";
-import WorkoutDetails from "../Pages/WorkoutDetails";
-import EditWorkout from "../Pages/EditWorkout";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -38,32 +35,15 @@ const router = createBrowserRouter([
             element: <Profile />,
           },
           {
-            path: "/workoutlist",
-            element: <WorkoutsList />,
+            path: "/categories/:id/:name",
+            element: <Categories />,
           },
         ],
       },
       {
-        path: "/exercises/:category/:musclegroup/:name",
-        element: <Exercises />,
+        path: "/transactions/:category/:name",
+        element: <Transactions />,
       },
-       {
-        path: "/create-workout",
-        element: <CreateWorkout />,
-      },
-       {
-        path: "/edit-workout/:id",
-        element: <EditWorkout />,
-      },
-      {
-        path: "/workout-details/:id",
-        element: <WorkoutDetails />,
-      },
-      {
-        path: "/exercise-details/:id/:name",
-        element: <ExerciseDetails />,
-      },
-      //after this we can add more routes for products, cart, about, etc.
       {
         path:"/reports",
         element:<Reports />
