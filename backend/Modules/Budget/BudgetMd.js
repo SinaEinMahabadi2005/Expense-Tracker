@@ -11,12 +11,11 @@ const budgetSchema = new mongoose.Schema(
     },
     month: {
       type: String,
-      required: [true, "title is required"],
-      unique: [true, "title is unique"],
+      required: [true, "month is required"],
     },
     year: {
       type: String,
-      required: [true, "note is required"],
+      required: [true, "year is required"],
     },
     amount: {
       type: Number,
