@@ -8,6 +8,7 @@ import Profile from "../Pages/Profile";
 import Categories from "../Pages/Categories";
 import Transactions from "../Pages/Transactions";
 import Reports from "../Pages/Reports";
+import CreateCategory from "../Pages/CreateCategory";
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
       {
         path:"/reports",
         element:<Reports />
+      } ,
+      {
+        path:"/create-category",
+        element:<CreateCategory />
       }
     ],
   },
