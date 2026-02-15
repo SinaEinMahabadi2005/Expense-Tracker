@@ -13,6 +13,7 @@ import authRouter from "./Modules/Auth/Auth.js";
 import userRouter from "./Modules/User/User.js";
 import categoryRouter from "./Modules/Category/Category.js";
 import transactionRouter from "./Modules/Transaction/Transaction.js";
+import budgetRouter from "./Modules/Budget/Budget.js";
 
 
 const limiter = rateLimit({
@@ -36,6 +37,7 @@ app.use("/api/auth",authRouter)
 app.use("/api/users",userRouter)
 app.use("/api/categories",categoryRouter)
 app.use("/api/transactions",transactionRouter)
+app.use("/api/budgets",budgetRouter)
 app.use((req, res, next) => {
   return res.status(404).json({
     success: false,
