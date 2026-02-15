@@ -1,12 +1,11 @@
 import ApiFeatures, { catchAsync, HandleERROR } from "vanta-api";
-import Transaction from "./TransactionMd.js";
 import Transaction from "../Transaction/TransactionMd.js";
 // get all transaction
 export const getAll = catchAsync(async (req, res, next) => {
   const features = new ApiFeatures(Transaction, req.query, req.role)
     .addManualFilters({
       ...(req.query?.search
-        ? { name: { $regex: req.query.search, $options: "i" } }
+        ? { title: { $regex: req.query.search, $options: "i" } }
         : {}),
       ...(req.role == "admin" ? {} : { isPublished: true }),
     })
