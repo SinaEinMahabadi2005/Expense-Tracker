@@ -23,6 +23,7 @@ export default function Login({handlePageType}) {
       if (data.success) {
         notify("success", data.message);
         localStorage.setItem("token", data.token);
+        localStorage.setItem("user", JSON.stringify(data.data));
         setEmail("");
         setPassword("");
         window.location.href = "/";
