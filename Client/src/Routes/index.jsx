@@ -41,7 +41,7 @@ const router = createBrowserRouter([
         ],
       },
       {
-        path: "/transactions/:category/:name",
+        path: "/transactions/:category",
         element: <Transactions />,
       },
       {

@@ -1,20 +1,4 @@
 @import "tailwindcss";
-@font-face {
-  font-family: 'digiHamishe';
-  src: url('/fonts/Digi-Hamishe-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'digiHamishe';
-  src: url('/fonts/Digi-Hamishe-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-}
-
-body {
-  font-family: 'digiHamishe', monospace !important;
-  direction: rtl;
-  text-align: center;
+body{
+  font-family: Arial, Helvetica, sans-serif !important;
 }
