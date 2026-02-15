@@ -1,7 +1,17 @@
 import Router from "express"
 import isLogin from "../../Middlewares/isLogin.js"
-import { create, getAll, getOne, remove } from "./TransactioCn.js"
+import { create, getAll, getOne, remove, update } from "./TransactioCn.js"
+import { createValidator, getAllValidator, getOneValidator, removeValidator, updateValidator } from "./TransactionValidator.js";
+import { handleValidationErrors } from "../../Utils/handleValidationError.js";
 const transactionRouter=Router()
-transactionRouter.route("/").get(isLogin,getAll).post(isLogin,create)
-transactionRouter.route("/:id").get(isLogin,getOne).patch(isLogin,create).delete(isLogin,remove)
+transactionRouter
+  .route("/")
+  .get(isLogin, getAllValidator, handleValidationErrors, getAll)
+  .post(isLogin, createValidator, handleValidationErrors, create);
+
+transactionRouter
+  .route("/:id")
+  .get(isLogin, getOneValidator, handleValidationErrors, getOne)
+  .patch(isLogin, updateValidator, handleValidationErrors, update)
+  .delete(isLogin, removeValidator, handleValidationErrors, remove);
 export default transactionRouter
