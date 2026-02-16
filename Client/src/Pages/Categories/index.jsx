@@ -125,8 +125,9 @@ export default function Categories() {
 
   const items = categories?.map((category) => (
     <div
+    onClick={()=>navigate(`/category-details/${category._id}`)}
       key={category._id}
-      className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-red-600 transition-all duration-300 hover:transform hover:-translate-y-1"
+      className="bg-gray-800/50 backdrop-blur-sm cursor-pointer rounded-xl p-6 border border-gray-700 hover:border-red-600 transition-all duration-300 hover:transform hover:-translate-y-1"
     >
       <div className="flex items-start justify-between mb-3">
         <h2 className="text-xl font-bold text-white">{category.name}</h2>

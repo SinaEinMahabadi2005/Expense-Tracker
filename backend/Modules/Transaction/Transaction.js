@@ -6,7 +6,7 @@ import { handleValidationErrors } from "../../Utils/handleValidationError.js";
 const transactionRouter=Router()
 transactionRouter
   .route("/")
-  .get(isLogin, getAllValidator, handleValidationErrors, getAll)
+  .get( getAllValidator, handleValidationErrors, getAll)
   .post(isLogin, createValidator, handleValidationErrors, create);
 
 transactionRouter
